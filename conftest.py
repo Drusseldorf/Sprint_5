@@ -18,18 +18,6 @@ def driver():
 
 
 @pytest.fixture(scope='function')
-def random_email():
-    email = helpers.random_valid_email()
-    return email
-
-
-@pytest.fixture(scope='function')
-def random_password():
-    password = helpers.random_valid_password()
-    return password
-
-
-@pytest.fixture(scope='function')
 def log_in(driver):
     driver.find_element(*MainPage.LOGIN_BUTTON).click()
     driver.find_element(*LoginPage.EMAIL_INPUT).send_keys(AuthData.EMAIL)
